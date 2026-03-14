@@ -97,14 +97,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.carousel-next');
     let carouselIdx = 0;
 
+    function isMobile() {
+        return window.innerWidth <= 640;
+    }
+
     function getVisibleCount() {
+        if (isMobile()) {
+            const cardH = cards[0].offsetHeight + 12;
+            return Math.round(track.offsetHeight / cardH);
+        }
         const cardW = cards[0].offsetWidth + 20;
         return Math.round(track.offsetWidth / cardW);
     }
 
     function scrollCarousel() {
-        const cardW = cards[0].offsetWidth + 20;
-        track.scrollTo({ left: carouselIdx * cardW, behavior: 'smooth' });
+        if (isMobile()) {
+            const cardH = cards[0].offsetHeight + 12;
+            track.scrollTo({ top: carouselIdx * cardH, behavior: 'smooth' });
+        } else {
+            const cardW = cards[0].offsetWidth + 20;
+            track.scrollTo({ left: carouselIdx * cardW, behavior: 'smooth' });
+        }
     }
 
     prevBtn.addEventListener('click', () => {
