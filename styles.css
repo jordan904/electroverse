@@ -90,15 +90,12 @@ a { text-decoration: none; color: inherit; }
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--white);
 }
 
-.logo-icon {
-    color: var(--accent);
+.nav-logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -863,13 +860,13 @@ a { text-decoration: none; color: inherit; }
 .footer-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-family: var(--font-display);
-    font-weight: 600;
-    color: var(--white);
 }
 
-.footer-brand svg { color: var(--accent); }
+.footer-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
 
 .footer p {
     font-size: 0.82rem;
